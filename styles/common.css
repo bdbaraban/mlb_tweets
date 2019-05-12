@@ -1,0 +1,57 @@
+/*
+ * --- Common CSS3 Style ---
+ */
+
+/* Site background and font */
+html, body {
+    background: #cecece;
+    font-family: 'Merriweather Sans', sans-serif;
+    height: 100%;
+}
+
+/* Sidebar background & layout */
+#sidebar {
+    background: #002d72;
+    color: #fffeff;
+    margin: 0;
+    padding: 20px;
+    transition: all .3s;
+}
+
+/* Border surrounding sidebar components */
+#sidebar .components {
+  border-bottom: 1px solid #fffeff;
+  border-top: 1px solid #fffeff;
+  padding: 0;
+}
+
+/* Sidebar header alignment */
+#sidebar h3 {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+/* Fixed, scrollable sidebar */
+@media (min-width: 768px) {
+    #sidebar {
+        position: fixed;
+    }
+    .menu {
+        bottom: 0;
+        left: 0;
+        top: 0;
+    }
+    .info {
+        bottom: 0;
+        top: 0;
+        right: 0;
+    }
+}
+
+/* Content padding */
+#content {
+    padding: 20px;
+}
+#content h1 {
+    padding-bottom: 20px;
+}

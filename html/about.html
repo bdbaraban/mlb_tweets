@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>MLB Tweets</title>
+
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+          crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet"> 
+    <link rel="stylesheet" href="../styles/common.css">
+    <link rel="stylesheet" href="../styles/menubar.css">
+    <link rel="stylesheet" href="../styles/infobar.css">
+    <link rel="stylesheet" href="../styles/faq.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+  </head>
+
+  <div class="container-fluid h-100">
+    <div class="row h-100">
+      <nav class="col-md-3 col-lg-2 menu" id="sidebar">
+        <h3>MLB Tweets</h3>
+        <ul class="list-unstyled components">
+          <li>
+            <a href="./home.html">Home</a>
+          </li>
+          <li>
+            <a href="#leagues" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Teams</a>
+            <ul class="collapse list-unstyled leagues" id="leagues">
+              <li>
+                <a href="#ALWest" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">AL West</a>
+                <ul class="collapse list-unstyled teams" id="ALWest">
+                  <li><a href="./leagues/al_west/astros.html">Houston Astros</a></li>
+                  <li><a href="./leagues/al_west/angels.html">Los Angeles Angels</a></li>
+                  <li><a href="./leagues/al_west/athletics.html">Oakland Athletics</a></li>
+                  <li><a href="./leagues/al_west/mariners.html">Seattle Mariners</a></li>
+                  <li><a href="./leagues/al_west/rangers.html">Texas Rangers</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#ALCentral" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">AL Central</a>
+                <ul class="collapse list-unstyled teams" id="ALCentral">
+                  <li><a href="./leagues/al_central/whitesox.html">Chicago White Sox</a></li>
+                  <li><a href="./leagues/al_central/indians.html">Cleveland Indians</a></li>
+                  <li><a href="./leagues/al_central/tigers.html">Detroit Tigers</a></li>
+                  <li><a href="./leagues/al_central/royals.html">Kansas City Royals</a></li>
+                  <li><a href="./leagues/al_central/twins.html">Minnesota Twins</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#ALEast" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">AL East</a>
+                <ul class="collapse list-unstyled teams" id="ALEast">
+                  <li><a href="./leagues/al_east/orioles.html">Baltimore Orioles</a></li>
+                  <li><a href="./leagues/al_east/redsox.html">Boston Red Sox</a></li>
+                  <li><a href="./leagues/al_east/yankees.html">New York Yankees</a></li>
+                  <li><a href="./leagues/al_east/rays.html">Tampa Bay Rays</a></li>
+                  <li><a href="./leagues/al_east/bluejays.html">Toronto Blue Jays</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#NLWest" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">NL West</a>
+                <ul class="collapse list-unstyled teams" id="NLWest">
+                  <li><a href="./leagues/nl_west/dbacks.html">Arizona Diamondbacks</a></li>
+                  <li><a href="./leagues/nl_west/rockies.html">Colorado Rockies</a></li>
+                  <li><a href="./leagues/nl_west/dodgers.html">Los Angeles Dodgers</a></li>
+                  <li><a href="./leagues/nl_west/padres.html">San Diego Padres</a></li>
+                  <li><a href="./leagues/nl_west/giants.html">San Francisco Giants</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#NLCentral" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">NL Central</a>
+                <ul class="collapse list-unstyled teams" id="NLCentral">
+                  <li><a href="./leagues/nl_central/cubs.html">Chicago Cubs</a></li>
+                  <li><a href="./leagues/nl_central/reds.html">Cincinnati Reds</a></li>
+                  <li><a href="./leagues/nl_central/brewers.html">Milwaukee Brewers</a></li>
+                  <li><a href="./leagues/nl_central/pirates.html">Pittsburgh Pirates</a></li>
+                  <li><a href="./leagues/nl_central/cardinals.html">St. Louis Cardinals</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#NLEast" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">NL East</a>
+                <ul class="collapse list-unstyled teams" id="NLEast">
+                  <li><a href="./leagues/nl_east/braves.html">Atlanta Braves</a></li>
+                  <li><a href="./leagues/nl_east/marlins.html">Miami Marlins</a></li>
+                  <li><a href="./leagues/nl_east/mets.html">New York Mets</a></li>
+                  <li><a href="./leagues/nl_east/phillies.html">Philadelphia Phillies</a></li>
+                  <li><a href="./leagues/nl_east/nationals.html">Washington Nationals</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="./about.html">About</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="col-md-9 col-lg-8 offset-md-3 offset-lg-2 d-flex flex-column" id="content">
+        <div class="row flex-grow justify-content-center">
+          <h1>About MLB Tweets</h1>
+          <div class="container faq">
+            <h3>What is MLB Tweets?</h3>
+              <p>MLB Tweets is a collection of Twitter lists for all 30 Major League Baseball teams.</p>
+            <h3>Which Twitter accounts are included in the lists?</h3>
+              <p>Lists feature verified Twitter handles for all players on a given team's active 40-man roster.</p>
+            <h3>How often are Twitter lists updated?</h3>
+              <p>Lists are updated automatically at 2:00 AM every Monday.</p>
+            <h3>This website is awesome! Who developed it?</h3>
+              <p>MLB Tweets was developed independently by yours truly. To reach out to me or view more of my work, please visit my portfolio page at <a href="https://bdov.dev">bdov.dev</a>.</p>
+          </div>  
+        </div>
+      </div>
+
+      <div class="col-lg-2 fixed d-none d-lg-block info" id="sidebar">
+        <h3>Scores</h3>
+        <ul class="components">
+          <li>NYY 3 vs TB 1</li>
+          <li>BOS 3 vs SEA 7</li>
+        </ul>
+      </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../scripts/menuScrollbar.js"></script>
+  </div>
+</html>
