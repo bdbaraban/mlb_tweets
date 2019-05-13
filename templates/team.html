@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>MLB Tweets</title>
+
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+          crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet"> 
+    <link rel="stylesheet" href="../static/styles/common.css">
+    <link rel="stylesheet" href="../static/styles/menubar.css">
+    <link rel="stylesheet" href="../static/styles/infobar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+  </head>
+
+  <div class="container-fluid h-100">
+    <div class="row h-100">
+      <nav class="col-md-3 col-lg-2 menu" id="sidebar">
+        <h3>MLB Tweets</h3>
+        <ul class="list-unstyled components">
+          <li>
+            <a href="{{ url_for('home') }}">Home</a>
+          </li>
+          <li>
+            <a href="#leagues" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Teams</a>
+            <ul class="collapse list-unstyled leagues" id="leagues">
+              <li>
+                <a href="#ALWest" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">AL West</a>
+                <ul class="collapse list-unstyled teams" id="ALWest">
+                  <li><a href="{{ url_for('teams', name='astros') }}">Houston Astros</a></li>
+                  <li><a href="{{ url_for('teams', name='angels') }}">Los Angeles Angels</a></li>
+                  <li><a href="{{ url_for('teams', name='athletics') }}">Oakland Athletics</a></li>
+                  <li><a href="{{ url_for('teams', name='mariners') }}">Seattle Mariners</a></li>
+                  <li><a href="{{ url_for('teams', name='rangers') }}">Texas Rangers</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#ALCentral" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">AL Central</a>
+                <ul class="collapse list-unstyled teams" id="ALCentral">
+                  <li><a href="{{ url_for('teams', name='white-sox') }}">Chicago White Sox</a></li>
+                  <li><a href="{{ url_for('teams', name='indians') }}">Cleveland Indians</a></li>
+                  <li><a href="{{ url_for('teams', name='tigers') }}">Detroit Tigers</a></li>
+                  <li><a href="{{ url_for('teams', name='royals') }}">Kansas City Royals</a></li>
+                  <li><a href="{{ url_for('teams', name='twins') }}">Minnesota Twins</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#ALEast" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">AL East</a>
+                <ul class="collapse list-unstyled teams" id="ALEast">
+                  <li><a href="{{ url_for('teams', name='orioles') }}">Baltimore Orioles</a></li>
+                  <li><a href="{{ url_for('teams', name='red-sox') }}">Boston Red Sox</a></li>
+                  <li><a href="{{ url_for('teams', name='yankees') }}">New York Yankees</a></li>
+                  <li><a href="{{ url_for('teams', name='rays') }}">Tampa Bay Rays</a></li>
+                  <li><a href="{{ url_for('teams', name='blue-jays') }}">Toronto Blue Jays</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#NLWest" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">NL West</a>
+                <ul class="collapse list-unstyled teams" id="NLWest">
+                  <li><a href="{{ url_for('teams', name='diamondbacks') }}">Arizona Diamondbacks</a></li>
+                  <li><a href="{{ url_for('teams', name='rockies') }}">Colorado Rockies</a></li>
+                  <li><a href="{{ url_for('teams', name='dodgers') }}">Los Angeles Dodgers</a></li>
+                  <li><a href="{{ url_for('teams', name='padres') }}">San Diego Padres</a></li>
+                  <li><a href="{{ url_for('teams', name='giants') }}">San Francisco Giants</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#NLCentral" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">NL Central</a>
+                <ul class="collapse list-unstyled teams" id="NLCentral">
+                  <li><a href="{{ url_for('teams', name='cubs') }}">Chicago Cubs</a></li>
+                  <li><a href="{{ url_for('teams', name='reds') }}">Cincinnati Reds</a></li>
+                  <li><a href="{{ url_for('teams', name='brewers') }}">Milwaukee Brewers</a></li>
+                  <li><a href="{{ url_for('teams', name='pirates') }}">Pittsburgh Pirates</a></li>
+                  <li><a href="{{ url_for('teams', name='cardinals') }}">St. Louis Cardinals</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#NLEast" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">NL East</a>
+                <ul class="collapse list-unstyled teams" id="NLEast">
+                  <li><a href="{{ url_for('teams', name='braves') }}">Atlanta Braves</a></li>
+                  <li><a href="{{ url_for('teams', name='marlins') }}">Miami Marlins</a></li>
+                  <li><a href="{{ url_for('teams', name='mets') }}">New York Mets</a></li>
+                  <li><a href="{{ url_for('teams', name='phillies') }}">Philadelphia Phillies</a></li>
+                  <li><a href="{{ url_for('teams', name='nationals') }}">Washington Nationals</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="{{ url_for('about') }}">About</a>
+          </li>
+        </ul> 
+      </nav>
+
+      <div class="col-md-9 col-lg-8 offset-md-3 offset-lg-2 d-flex flex-column" id="content">
+        <div class="row flex-grow justify-content-center">
+          <h1>{{ team.name }}</h1>
+          <p>Last updated: {{ team.updated_at.isoformat() }}</p>
+          <a class="twitter-timeline"
+             data-theme="dark"
+             data-width="550px"
+             data-height="600px"
+             data-link-color="#a93f55"
+             href="{{ team.embed }}">
+             A Twitter List by bdov_
+          </a>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+        </div>
+      </div>
+
+      <div class="col-lg-2 fixed d-none d-lg-block info" id="sidebar">
+        <h3>Roster</h3>
+        <ul class="components">
+        {% for k, v in team.roster.items() %}
+          <li>{{ k }}<br>{{ v }}</li>
+        {% endfor %}
+        </ul>
+      </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="{{ url_for('static', filename='scripts/menuScrollbar.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/infoScrollbar.js') }}"></script>
+  </div>
+</html>
