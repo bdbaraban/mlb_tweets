@@ -1,0 +1,22 @@
+/*
+ * --- Right Info Sidebar CSS3 Style ---
+ */
+
+ /* Header link style */
+.sidebar-header h3 a,
+.sidebar-header h3 a:active,
+.sidebar-header h3 a:visited {
+  color: #fffeff;
+  text-decoration: none;
+}
+.sidebar-header a:hover {
+  text-decoration: underline;
+}
+
+/* Scores/Roster text style */
+.info ul li {
+  padding: 15px;
+  font-size: 1.1em;
+  display: block;
+  text-align: center;
+}
