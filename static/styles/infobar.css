@@ -13,10 +13,9 @@
   text-decoration: underline;
 }
 
-/* Scores/Roster text style */
+/* Roster text style */
 .info ul li {
-  padding: 15px;
-  font-size: 1.1em;
   display: block;
-  text-align: center;
+  font-size: .9em;
+  padding: 10px;
 }

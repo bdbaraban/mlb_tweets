@@ -103,7 +103,7 @@
       <div class="col-md-9 col-lg-8 offset-md-3 offset-lg-2 d-flex flex-column" id="content">
         <div class="row flex-grow justify-content-center">
           <h1>{{ team.name }}</h1>
-          <p>Last updated: {{ team.updated_at.isoformat() }}</p>
+          <p class="time">Last updated: {{ team.updated_at.strftime("%Y-%m-%d %H:%M:%S") }}</p>
           <a class="twitter-timeline"
              data-theme="dark"
              data-width="550px"
