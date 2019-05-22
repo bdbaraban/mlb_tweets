@@ -1,9 +1,17 @@
-# MLB Tweets :baseball:
+<h1 align="center">MLB Tweets :baseball:</h1>
+<p align="center">
+  An MLB Twitter lists website featuring Twitter lists for all 30 MLB teams.
+</p>
+
+<p align="center">
+  <img src="https://github.com/bdbaraban/twenty_timer/blob/master/screenshots/home.png"
+   alt="Home screen screenshot"
+  />
+</p>
 
 ## Description :speech_balloon:
 
-MLB Tweets is a website featuring active Twitter lists for all 30 MLB teams. The website
-runs on a Python Flask app serving HTML static content using Jinja2.
+MLB Tweets runs on a Python Flask app serving HTML static content using Jinja2.
 
 ### Back-End :electric_plug:
 
