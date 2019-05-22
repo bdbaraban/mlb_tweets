@@ -1,5 +1,5 @@
 /*
- * --- Left Menu Sidebar  CSS3 Style ---
+ * --- Left Menu Sidebar CSS3 Style ---
  */
 
 /* Home/Teams/About text style */
@@ -9,9 +9,21 @@
   display: block;
 }
 
+.menu ul {
+  border-bottom: 1px solid #fffeff;
+  border-top: 1px solid #fffeff;
+  padding: 0;
+}
+
 /* Dropdown color */
 .menu .dropdown-toggle {
   background: #001b59;
+}
+
+.menu .leagues,
+.menu .teams {
+  border-bottom: none;
+  border-top: none;
 }
 
 /* Leagues text style */

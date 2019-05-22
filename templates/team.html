@@ -16,16 +16,18 @@
           crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet"> 
     <link rel="stylesheet" href="../static/styles/common.css">
-    <link rel="stylesheet" href="../static/styles/menubar.css">
-    <link rel="stylesheet" href="../static/styles/infobar.css">
+    <link rel="stylesheet" href="../static/styles/content.css">
+    <link rel="stylesheet" href="../static/styles/menu.css">
+    <link rel="stylesheet" href="../static/styles/roster.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <link rel="icon" href="../images/favicon.ico"/>
   </head>
 
   <div class="container-fluid h-100">
     <div class="row h-100">
-      <nav class="col-md-3 col-lg-2 menu" id="sidebar">
+      <nav class="col-md-3 col-lg-2 left menu" id="sidebar">
         <h3>MLB Tweets</h3>
-        <ul class="list-unstyled components">
+        <ul class="list-unstyled">
           <li>
             <a href="{{ url_for('home') }}">Home</a>
           </li>
@@ -116,8 +118,8 @@
         </div>
       </div>
 
-      <div class="col-lg-2 fixed d-none d-lg-block info" id="sidebar">
-        <h3>Roster</h3>
+      <div class="col-lg-2 fixed d-none d-lg-block right roster" id="sidebar">
+        <h3><a href="{{ team.url }}" target="_blank">Roster</a></h3>
         <ul class="components">
         {% for k, v in team.roster.items() %}
           <li>{{ k }}<br>{{ v }}</li>
@@ -136,7 +138,6 @@
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="{{ url_for('static', filename='scripts/menuScrollbar.js') }}"></script>
-    <script src="{{ url_for('static', filename='scripts/infoScrollbar.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/scrollbar.js') }}"></script>
   </div>
 </html>

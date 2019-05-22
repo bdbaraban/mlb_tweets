@@ -1,0 +1,30 @@
+/*
+ * --- Right Standings Sidebar CSS3 Style ---
+ */
+
+.standings p {
+    text-align: center;
+}
+
+.standings p,
+.standings ul {
+    border-bottom: 1px solid #fffeff;
+    margin: 0;
+    padding: 10px 0 10px 0;
+}
+
+.standings p {
+    border-top: 1px solid #fffeff;
+}
+
+.standings ol {
+    text-align: left;
+}
+
+.standings li {
+    font-size: 1.1em;
+}
+
+.standings ol li {
+    font-size: .9em;
+}

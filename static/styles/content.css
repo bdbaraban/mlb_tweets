@@ -1,0 +1,18 @@
+/*
+ * --- Center Content CSS3 Style
+ */
+
+#content {
+    padding: 20px;
+    text-align: center;
+}
+
+#content h1 {
+    border-bottom: 1.5px solid #000;
+    padding-bottom: 20px;
+    width: 60%;
+}
+
+#content p {
+    width: 100%;
+}

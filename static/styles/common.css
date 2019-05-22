@@ -18,13 +18,6 @@ html, body {
     transition: all .3s;
 }
 
-/* Border surrounding sidebar components */
-#sidebar .components {
-  border-bottom: 1px solid #fffeff;
-  border-top: 1px solid #fffeff;
-  padding: 0;
-}
-
 /* Sidebar header alignment */
 #sidebar h3 {
     text-align: center;
@@ -36,28 +29,14 @@ html, body {
     #sidebar {
         position: fixed;
     }
-    .menu {
+    .left {
         bottom: 0;
         left: 0;
         top: 0;
     }
-    .info {
+    .right {
         bottom: 0;
         top: 0;
         right: 0;
     }
-}
-
-/* Content padding */
-#content {
-    padding: 20px;
-    text-align: center;
-}
-#content h1 {
-    border-bottom: 1.5px solid #000;
-    padding-bottom: 20px;
-    width: 60%;
-}
-#content p {
-    width: 100%;
 }

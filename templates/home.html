@@ -10,22 +10,20 @@
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
           crossorigin="anonymous">
-    <link rel="stylesheet"
-          href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-          crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet"> 
     <link rel="stylesheet" href="../static/styles/common.css">
-    <link rel="stylesheet" href="../static/styles/menubar.css">
-    <link rel="stylesheet" href="../static/styles/infobar.css">
+    <link rel="stylesheet" href="../static/styles/content.css">
+    <link rel="stylesheet" href="../static/styles/menu.css">
+    <link rel="stylesheet" href="../static/styles/standings.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <link rel="icon" href="../images/favicon.ico"/>
   </head>
 
   <div class="container-fluid h-100">
     <div class="row h-100">
-      <nav class="col-md-3 col-lg-2 menu" id="sidebar">
+      <nav class="col-md-3 col-lg-2 left menu" id="sidebar">
         <h3>MLB Tweets</h3>
-        <ul class="list-unstyled components">
+        <ul class="list-unstyled">
           <li>
             <a href="{{ url_for('home') }}">Home</a>
           </li>
@@ -116,12 +114,19 @@
         </div>
       </div>
 
-      <div class="col-lg-2 fixed d-none d-lg-block info" id="sidebar">
-        <h3>Scores</h3>
-        <ul class="components">
-          <li>NYY 3 vs TB 1</li>
-          <li>BOS 3 vs SEA 7</li>
+      <div class="col-lg-2 fixed d-none d-lg-block right standings" id="sidebar">
+        <h3>Standings</h3>
+        <p>Last updated:<br>{{ standings.updated_at.strftime("%Y-%m-%d %H:%M:%S") }}</p>
+        {% for division, teams in standings.divisions.items() %}
+        <ul class="list-unstyled">
+          <li>{{ division }}</li>
+          <ol class="list-unstyled">
+          {% for t in teams %}
+            <li>{{ t.rank }}. {{ t.last_name }} ({{ t.won }}-{{ t.lost }})</li>
+          {% endfor %}
+          </ol>
         </ul>
+        {% endfor %}
       </div>
 
     </div>
@@ -135,7 +140,6 @@
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="{{ url_for('static', filename='scripts/menuScrollbar.js') }}"></script>
-    <script src="{{ url_for('static', filename='scripts/infoScrollbar.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/scrollbar.js') }}"></script>
   </div>
 </html>
