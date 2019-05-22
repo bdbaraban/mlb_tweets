@@ -4,10 +4,10 @@ import json
 import models
 import requests
 from bs4 import BeautifulSoup
-from models.base_model import BaseModel
+from datetime import datetime
 
 
-class Team(BaseModel):
+class Team:
     """Represents the roster and Twitter list for a given team.
 
     Attributes:
@@ -17,6 +17,7 @@ class Team(BaseModel):
         roster (dict): Key/value pairs of players/Twitter handles.
         list_id (str): The Team's Twitter list ID.
         embed (str): The embedded link for the Team's Twitter list.
+        updated_at (datetime): The time of last update.
     """
 
     name = ""
@@ -25,19 +26,48 @@ class Team(BaseModel):
     roster = ""
     list_id = ""
     embed = ""
+    updated_at = datetime
+
+    def __init__(self, **kwargs):
+        """Initialize a new Team.
+
+        Args:
+            **kwargs (any): Key/value pairs of attributes.
+        """
+        for key, value in kwargs.items():
+            if key == "updated_at":
+                value = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
+            setattr(self, key, value)
+
+    def to_dict(self):
+        """Return a dictionary representation of the Team instance."""
+        d = self.__dict__.copy()
+        d["updated_at"] = self.updated_at.isoformat()
+        return d
 
     def update_roster(self):
         """Updates the Team roster."""
-        page = requests.get(self.url)
-        soup = BeautifulSoup(page.text, "html.parser")
-        self.roster = {}
+        try:
+            page = requests.get(self.url)
+            soup = BeautifulSoup(page.text, "html.parser")
+        except Exception:
+            return
+
+        updated = {}
         for t in soup.find_all("tbody"):
             for p in t.find_all("a"):
-                page = requests.get("{}{}".format(self.url[:-1], p["href"]))
-                soup = BeautifulSoup(page.text, "html.parser")
-                handle = soup.find("a", class_="twitter-follow-button")
-                handle = handle["href"].split("/")[-1]
-                self.roster[p.text] = "None" if handle == "mlb" else handle
+                if p.text in self.roster.keys():
+                    updated[p.text] = self.roster[p.text]
+                    continue
+                try:
+                    page = requests.get("{}{}".format(self.url[:-1], p["href"]))
+                    soup = BeautifulSoup(page.text, "html.parser")
+                    handle = soup.find("a", class_="twitter-follow-button")
+                    handle = handle["href"].split("/")[-1]
+                    updated[p.text] = "None" if handle == "mlb" else handle
+                except Exception:
+                    continue
+        self.roster = updated
 
     def update_list(self, oauth):
         """Updates the Team Twitter list.
@@ -50,7 +80,10 @@ class Team(BaseModel):
             "list_id": self.list_id,
             "count": 41
         }
-        r = oauth.get(url, params=params).json()
+        try:
+            r = oauth.get(url, params=params).json()
+        except Exception:
+            return
 
         current_members = set()
         for u in r.get("users"):

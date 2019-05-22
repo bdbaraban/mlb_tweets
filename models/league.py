@@ -16,13 +16,13 @@ class League:
     __teams = {}
 
     def save(self):
-        """Serialize __teams to the JSON file __file_path."""
+        """Serialize __teams to the JSON teams storage file."""
         d = {t: self.__teams[t].to_dict() for t in self.__teams.keys()}
         with open("league.json", "w", encoding="utf-8") as f:
             json.dump(d, f)
 
     def reload(self):
-        """Deserialize the JSON file __file_path to __teams, if it exists."""
+        """Deserialize the JSON teams storage files to __teams."""
         try:
             with open("league.json", "r", encoding="utf-8") as f:
                 self.__teams = {k: Team(**v) for k, v in json.load(f).items()}
